@@ -38,7 +38,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputHeight);
                         height = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(height))
+                        if (!ValidateNumber(height))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -48,8 +48,8 @@ namespace M05UF2
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
-                        width = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(width))
+                        width = Convert.ToDouble(Console.ReadLine());                        if (!ValidateNumber(width))
+                        if (!ValidateNumber(width))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -63,7 +63,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputHeight);
                         height = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(height))
+                        if (!ValidateNumber(height))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -74,7 +74,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputWidth);
                         width = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(width))
+                        if (!ValidateNumber(width))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -88,7 +88,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputRadius);
                         radius = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(radius))
+                        if (!ValidateNumber(radius))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -102,7 +102,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputApotema);
                         apotema = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(apotema))
+                        if (!ValidateNumber(apotema))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -113,7 +113,7 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputSide);
                         side = Convert.ToDouble(Console.ReadLine());
-                        if (ValidateNumber(side))
+                        if (!ValidateNumber(side))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
@@ -127,6 +127,10 @@ namespace M05UF2
         public static bool ValidateOption(string option)
         {
             return ((option == "a") || (option == "b") || (option == "c") || (option == "d")) ? true : false;
+        }
+        public static bool ValidateNumber(double number)
+        {
+            return number > 0 ? true : false;
         }
     }
 }
