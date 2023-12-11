@@ -23,7 +23,7 @@ namespace M05UF2
                 error = false;
                 Console.WriteLine(MsgOption);
                 option = Console.ReadLine().ToLower();
-                if (ValidateOption(option))
+                if (!ValidateOption(option))
                 {
                     Console.WriteLine(MsgError);
                     error = true;
@@ -123,6 +123,10 @@ namespace M05UF2
                     break;
             }
             Console.WriteLine(MsgOutputArea, area);
+        }
+        public static bool ValidateOption(string option)
+        {
+            return ((option == "a") || (option == "b") || (option == "c") || (option == "d")) ? true : false;
         }
     }
 }
