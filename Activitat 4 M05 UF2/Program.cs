@@ -8,7 +8,7 @@ namespace M05UF2
         {
             bool error = false;
             string option = "";
-            double area, height, width, radius, apotema, side;
+            double area = 0, height = 0, width = 0, radius = 0, apotema = 0, side = 0;
             const string MsgOption = "De que vols calcular l'àrea? \na. Quadrat \nb. Rectangle \nc. Cercle \nd.Pentàgon";
             const string MsgInputHeight = "Introdueix l'alçada en m: ";
             const string MsgInputWidth = "Introdueix l'amplada en m: ";
@@ -17,7 +17,6 @@ namespace M05UF2
             const string MsgInputSide = "Introdueix quant mesura un costat en m: ";
             const string MsgOutputArea = "L'area d'aquesta figura és {0} m.";
             const string MsgError = "Valor no vàlid.";
-            const string MsgNoMoreAttempts = "No et queden més intents";
 
             while (error)
             {
@@ -89,10 +88,41 @@ namespace M05UF2
                         error = false;
                         Console.Write(MsgInputRadius);
                         radius = Convert.ToDouble(Console.ReadLine());
+                        if (ValidateNumber(radius))
+                        {
+                            Console.WriteLine(MsgError);
+                            error = true;
+                        }
                     }
-
+                    area = AreaCircle(radius);
+                    break;
+                case "d":
+                    while (error)
+                    {
+                        error = false;
+                        Console.Write(MsgInputApotema);
+                        apotema = Convert.ToDouble(Console.ReadLine());
+                        if (ValidateNumber(apotema))
+                        {
+                            Console.WriteLine(MsgError);
+                            error = true;
+                        }
+                    }
+                    while (error)
+                    {
+                        error = false;
+                        Console.Write(MsgInputSide);
+                        side = Convert.ToDouble(Console.ReadLine());
+                        if (ValidateNumber(side))
+                        {
+                            Console.WriteLine(MsgError);
+                            error = true;
+                        }
+                    }
+                    area = AreaPentagon(apotema, side);
+                    break;
             }
-
+            Console.WriteLine(MsgOutputArea, area);
         }
     }
 }
