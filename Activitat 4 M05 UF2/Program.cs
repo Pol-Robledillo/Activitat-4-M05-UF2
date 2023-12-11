@@ -16,7 +16,7 @@ namespace M05UF2
             const string MsgInputApotema = "Introdueix l'apotema en m: ";
             const string MsgInputSide = "Introdueix quant mesura un costat en m: ";
             const string MsgOutputArea = "L'area d'aquesta figura és {0} m.";
-            const string MsgError = "Aquest valor no vàlid.";
+            const string MsgError = "Aquest valor no és vàlid.";
 
             while (error)
             {
