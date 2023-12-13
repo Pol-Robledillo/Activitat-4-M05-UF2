@@ -132,5 +132,9 @@ namespace M05UF2
         {
             return number > 0 ? true : false;
         }
+        public static double AreaSquareRectangle(double height, double width)
+        {
+            return height * width;
+        }
     }
 }
