@@ -48,12 +48,12 @@ namespace M05UF2
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
-                        width = Convert.ToDouble(Console.ReadLine()); if (!ValidateNumber(width))
-                            if (!ValidateNumber(width))
-                            {
-                                Console.WriteLine(MsgError);
-                                error = true;
-                            }
+                        width = Convert.ToDouble(Console.ReadLine());                        if (!ValidateNumber(width))
+                        if (!ValidateNumber(width))
+                        {
+                            Console.WriteLine(MsgError);
+                            error = true;
+                        }
                     }
                     area = AreaSqareRectangle(height, width);
                     break;
