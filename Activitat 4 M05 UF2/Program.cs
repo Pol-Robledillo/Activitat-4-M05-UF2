@@ -134,7 +134,7 @@ namespace M05UF2
         }
         public static double AreaSquareRectangle(double height, double width)
         {
-
+            return height * width;
         }
     }
 }
