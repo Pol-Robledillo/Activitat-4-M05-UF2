@@ -6,10 +6,10 @@ namespace M05UF2
     {
         public static void Main()
         {
-            bool error = false;
+            bool error = true;
             string option = "";
             double area = 0, height = 0, width = 0, radius = 0, apotema = 0, side = 0;
-            const string MsgOption = "De que vols calcular l'àrea? \na. Quadrat \nb. Rectangle \nc. Cercle \nd.Pentàgon";
+            const string MsgOption = "De que vols calcular l'àrea? \na. Quadrat \nb. Rectangle \nc. Cercle \nd. Pentàgon";
             const string MsgInputHeight = "Introdueix l'alçada en m: ";
             const string MsgInputWidth = "Introdueix l'amplada en m: ";
             const string MsgInputRadius = "Introdueix el radi en m: ";
@@ -18,7 +18,7 @@ namespace M05UF2
             const string MsgOutputArea = "L'area d'aquesta figura és {0} m.";
             const string MsgError = "Aquest valor no és vàlid.";
 
-            while (error)
+            do
             {
                 error = false;
                 Console.WriteLine(MsgOption);
@@ -28,12 +28,12 @@ namespace M05UF2
                     Console.WriteLine(MsgError);
                     error = true;
                 }
-            }
+            } while (error);
             Console.WriteLine();
             switch (option)
             {
                 case "a":
-                    while (error)
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputHeight);
@@ -43,8 +43,8 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
-                    while (error)
+                    } while (error);
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
@@ -54,11 +54,11 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
+                    } while (error);
                     area = AreaSquareRectangle(height, width);
                     break;
                 case "b":
-                    while (error)
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputHeight);
@@ -68,8 +68,8 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
-                    while (error)
+                    } while (error);
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
@@ -79,11 +79,11 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
+                    } while (error) ;
                     area = AreaSquareRectangle(height, width);
                     break;
                 case "c":
-                    while (error)
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputRadius);
@@ -93,11 +93,11 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
+                    } while (error);
                     area = AreaCircle(radius);
                     break;
                 case "d":
-                    while (error)
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputApotema);
@@ -107,8 +107,8 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
-                    while (error)
+                    } while (error);
+                    do
                     {
                         error = false;
                         Console.Write(MsgInputSide);
@@ -118,7 +118,7 @@ namespace M05UF2
                             Console.WriteLine(MsgError);
                             error = true;
                         }
-                    }
+                    } while (error);
                     area = AreaPentagon(apotema, side);
                     break;
             }

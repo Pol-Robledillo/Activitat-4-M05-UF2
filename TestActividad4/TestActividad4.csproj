@@ -16,4 +16,8 @@
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Activitat 4 M05 UF2\Activitat 4 M05 UF2.csproj" />
+  </ItemGroup>
+
 </Project>

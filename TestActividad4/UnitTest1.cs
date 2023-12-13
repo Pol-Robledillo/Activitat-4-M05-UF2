@@ -8,7 +8,7 @@ namespace Test_Actividad_4
         public void ValidateOptionTestTrue()
         {
             //Arrange
-            string letter = "a";
+            const string letter = "a";
             bool result;
 
             //Act
@@ -22,7 +22,7 @@ namespace Test_Actividad_4
         public void ValidateOptionTestFalse()
         {
             //Arrange
-            string letter = "j";
+            const string letter = "j";
             bool result;
 
             //Act
@@ -36,7 +36,7 @@ namespace Test_Actividad_4
         public void ValidateNumberTestTrue()
         {
             //Arrange
-            double number = 54.2;
+            const double number = 54.2;
             bool result;
 
             //Act
@@ -50,7 +50,7 @@ namespace Test_Actividad_4
         public void ValidateNumberTestFalse()
         {
             //Arrange
-            double number = -23;
+            const double number = -23;
             bool result;
 
             //Act
@@ -58,6 +58,90 @@ namespace Test_Actividad_4
 
             //Assert
             Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void AreaSquareRectangleTest1()
+        {
+            //Arrange
+            const double height = 33.3, width = 15, expected = height * width;
+            double result;
+
+            //Act
+            result = Pt4.AreaSquareRectangle(height, width);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void AreaSquareRectangleTest2()
+        {
+            //Arrange
+            const double height = 5, width = 5, expected = height * width;
+            double result;
+
+            //Act
+            result = Pt4.AreaSquareRectangle(height, width);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void AreaCircleTest1()
+        {
+            //Arrange
+            const double radius = 16, expected = Math.PI * (radius * radius);
+            double result;
+
+            //Act
+            result = Pt4.AreaCircle(radius);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void AreaCircleTest2()
+        {
+            //Arrange
+            const double radius = 54.2, expected = Math.PI * (radius * radius);
+            double result;
+
+            //Act
+            result = Pt4.AreaCircle(radius);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void AreaPentagonTest1()
+        {
+            //Arrange
+            const double side = 40.6, apotema = 33.7, expected = ((side * 5) * apotema) / 2;
+            double result;
+
+            //Act
+            result = Pt4.AreaPentagon(apotema, side);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void AreaPentagonTest2()
+        {
+            //Arrange
+            const double side = 6, apotema = 5, expected = ((side * 5) * apotema) / 2;
+            double result;
+
+            //Act
+            result = Pt4.AreaPentagon(apotema, side);
+
+            //Assert
+            Assert.AreEqual(expected, result);
         }
     }
 }
