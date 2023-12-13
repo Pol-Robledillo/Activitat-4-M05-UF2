@@ -136,5 +136,9 @@ namespace M05UF2
         {
             return height * width;
         }
+        public static double AreaCircle(double radius)
+        {
+            return Math.PI * (radius * radius);
+        }
     }
 }
