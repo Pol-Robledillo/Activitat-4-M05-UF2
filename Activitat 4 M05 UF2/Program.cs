@@ -48,14 +48,14 @@ namespace M05UF2
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
-                        width = Convert.ToDouble(Console.ReadLine());                        if (!ValidateNumber(width))
+                        width = Convert.ToDouble(Console.ReadLine());
                         if (!ValidateNumber(width))
                         {
                             Console.WriteLine(MsgError);
                             error = true;
                         }
                     }
-                    area = AreaSqareRectangle(height, width);
+                    area = AreaSquareRectangle(height, width);
                     break;
                 case "b":
                     while (error)
@@ -80,7 +80,7 @@ namespace M05UF2
                             error = true;
                         }
                     }
-                    area = AreaSqareRectangle(height, width);
+                    area = AreaSquareRectangle(height, width);
                     break;
                 case "c":
                     while (error)
@@ -139,6 +139,10 @@ namespace M05UF2
         public static double AreaCircle(double radius)
         {
             return Math.PI * (radius * radius);
+        }
+        public static double AreaPentagon(double apotema, double side)
+        {
+            return ((side * 5) * apotema) / 2;
         }
     }
 }
