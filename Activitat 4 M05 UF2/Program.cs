@@ -48,7 +48,7 @@ namespace M05UF2
                     {
                         error = false;
                         Console.Write(MsgInputWidth);
-                        width = Convert.ToDouble(Console.ReadLine()); if (!ValidateNumber(width))
+                        width = Convert.ToDouble(Console.ReadLine());
                         if (!ValidateNumber(width))
                         {
                             Console.WriteLine(MsgError);
